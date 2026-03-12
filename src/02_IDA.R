@@ -47,9 +47,6 @@ ggsave("reports/figures/ida_a.pdf",
 #######################################################################
 ## Observe baseline summaries stratified by another categorical factor.
 ## Typical stratification factors are "study or "treatment group".
-## In this case we want to compare placebo vs Cosentyx 300mg
-## but Cosentyx 300mg is not available in all studies. So both
-## treatment and study are of interest as stratification factors
 
 ## text based summary
 tab <- tableone::CreateTableOne(strata = "trt", data = adat)
