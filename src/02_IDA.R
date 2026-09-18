@@ -33,9 +33,9 @@ vars <- c("X5", "X6")
 pp_plots <- lapply(vars, plot_density_bar, data = adat)
 res <- ggpubr::ggarrange(pp_plots[[1]], pp_plots[[2]], nrow = 1, ncol = 2)
 
-# Check is the reports folder exists, and if not create it
+# Check if the reports folder exists, and if not create it
 dir.create(file.path("reports"))
-# Check is the reports/figures folder exists, and if not create it
+# Check if the reports/figures folder exists, and if not create it
 dir.create(file.path("reports/figures"))
 ggsave("reports/figures/ida_a.pdf",
        res,
@@ -46,7 +46,7 @@ ggsave("reports/figures/ida_a.pdf",
 ## Stratified univariate summary of baseline variables
 #######################################################################
 ## Observe baseline summaries stratified by another categorical factor.
-## Typical stratification factors are "study or "treatment group".
+## Typical stratification factors are "study" or "treatment group".
 
 ## text based summary
 tab <- tableone::CreateTableOne(strata = "trt", data = adat)
@@ -66,7 +66,7 @@ ggsave("reports/figures/ida_b.pdf",
 )
 
 #######################################################################
-## Evalulate missing values/non-informative baseline variables
+## Evaluate missing values/non-informative baseline variables
 #######################################################################
 ## Here missingness & missingness patterns are explored further, in
 ## addition to assessment of variables with low information (e.g. all

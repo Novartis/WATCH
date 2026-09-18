@@ -27,7 +27,7 @@ dat <- generate_scen_data(scen = cases,  include_truth = F) %>%
 #   mutate_at('trt', as.factor)
 
 
-## extract informtion on covariates, response, treatment
+## extract information on covariates, response, treatment
 X <- dat %>% dplyr::select(starts_with("X"))
 Y <- dat$Y
 trt <- dat$trt
