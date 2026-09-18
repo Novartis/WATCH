@@ -60,7 +60,7 @@ saveRDS(adat, file = "data/analysis_data2.rds")
 ##   recommend to perform multiple imputation to get multiple data-sets
 ##   with complete baseline variables, but then, rather than using all of 
 ##   those data-sets in subsequent analyses, taking median/mode on the imputed 
-##   values for each missing to get a single dataset. The [`mice`](https://CRAN.R-project.org/package=mice)
+##   values for each missing to get a single dataset. The [`mice`](https://CRAN.R-project.org/package=mice) package
 ##   provides a lot of flexibility and ease of use for this purpose.
 ## * The imputation of baseline covariates should be independent of
 ##   outcome or any other post-baseline variables.
@@ -99,7 +99,7 @@ head(missing_value_count)
 
 vars_impute <- c(missing_value_count %>%
                    filter(na_count > 0 & rowname != "Y") %>%
-                   select(rowname)) # select covariates includes missing value
+                   select(rowname)) # select covariates including missing value
 
 
 ## optional step: Add indicator variable for missingness
